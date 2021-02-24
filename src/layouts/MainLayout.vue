@@ -16,13 +16,15 @@
       tag="div"
       class="container"
       mode="out-in">
-        <img
+        <div
           v-for="item in mapa"
           v-bind:key="item.position"
           v-show="item.position===visible_item"
           :style="'background-color:'+item.color"
-          src="../assets/paisagem.jpg"
-        />
+          class="pg blurjs"
+          fadejs-data="opacity: 0.6;"
+        >
+      </div>
     </transition-group>
   </div>
 </template>
@@ -156,29 +158,29 @@ body {
 
 .slide-right-leave-to,
 .slide-left-enter {
-  filter: blur(5px);
-  opacity: .8;
+  /* filter: blur(5px); */
+  /* opacity: .8; */
   transform: translateX(100%);
 }
 
 .slide-right-enter,
 .slide-left-leave-to {
-  filter: blur(5px);
-  opacity: .8;
+  /* filter: blur(5px); */
+  /* opacity: .8; */
   transform: translateX(-100%);
 }
 
 .slide-down-leave-to,
 .slide-up-enter {
-  filter: blur(5px);
-  opacity: .8;
+  /* filter: blur(5px); */
+  /* opacity: .8; */
   transform: translateY(100%);
 }
 
 .slide-down-enter,
 .slide-up-leave-to {
-  filter: blur(5px);
-  opacity: .8;
+  /* filter: blur(5px); */
+  /* opacity: .8; */
   transform: translateY(-100%);
 }
 
