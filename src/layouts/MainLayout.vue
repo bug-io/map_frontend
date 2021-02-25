@@ -2,6 +2,7 @@
   <div>
     <!-- <q-btn class="q-ma-xl btn" color="primary" label="Show / Hide" v-on:click="$_changeVisibleItem"/> -->
     <div class="btn">
+      <div>{{ info }}</div>
       <q-btn
         v-for="item in mapa"
         v-bind:key="item.position"
@@ -30,6 +31,8 @@
 </template>
 
 <script>
+
+import { api } from 'boot/axios'
 
 export default {
   name: 'MainLayout',
@@ -78,7 +81,8 @@ export default {
         }
       ],
       visible_item: 0,
-      visible_item_direction: ''
+      visible_item_direction: '',
+      info: null
     }
   },
 
@@ -87,6 +91,13 @@ export default {
     // motionblurjs.setAttribute('src', 'https://www.motionblurjs.com/blur.js')
     // document.head.appendChild(motionblurjs)
     // console.log(motionblurjs)
+    api
+      .get()
+      .then(response => {
+        console.log(response)
+        this.info = response
+      })
+      .catch(error => console.log(error))
   },
 
   methods: {

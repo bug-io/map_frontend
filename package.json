@@ -10,13 +10,20 @@
     "electron:serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "fix": "eslint --fix src/**"
   },
   "main": "background.js",
   "dependencies": {
+    "-": "0.0.1",
     "@quasar/extras": "^1.0.0",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
-    "quasar": "^1.0.0"
+    "express": "^4.17.1",
+    "python-shell": "^2.0.3",
+    "quasar": "^1.0.0",
+    "request-promise": "*",
+    "vue-axios": "^3.2.4"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",
@@ -25,6 +32,7 @@
     "electron": "^9.4.3",
     "electron-debug": "^3.2.0",
     "electron-devtools-installer": "^3.1.1",
+    "electron-prebuilt": "^1.4.13",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-loader": "^3.0.3",
@@ -33,6 +41,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.1.2",
+    "request-promise": "*",
     "vue-cli-plugin-electron-builder": "~2.0.0-rc.6"
   },
   "browserslist": [

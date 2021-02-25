@@ -14,12 +14,32 @@ if (process.env.PROD) {
   global.__statics = __dirname
 }
 
+// const api = require('../api.js')
 let mainWindow
+
+function createApi () {
+  let {PythonShell} = require('python-shell')
+
+  let {shell} = require('electron')
+  
+  shell.openPath('C:/Users/jotap/OneDrive/Área de Trabalho/Bug.io/Testes/electron_py_api/run.bat')
+
+  // let pyshell = new PythonShell(
+  //   'C:/Users/jotap/OneDrive/Área de Trabalho/Bug.io/Testes/electron_py_api/hello.py',{env: }
+  // );
+
+  // pyshell.on('message', function(message) {
+  //   console.log(message);
+  //   console.log(typeof message);
+  // });
+}
 
 function createWindow () {
   /**
    * Initial window options
    */
+  // api();
+  
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 600,
@@ -42,7 +62,10 @@ function createWindow () {
   })
 }
 
-app.on('ready', createWindow)
+app.on('ready', () => {
+  createApi()
+  createWindow()
+})
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
@@ -52,6 +75,7 @@ app.on('window-all-closed', () => {
 
 app.on('activate', () => {
   if (mainWindow === null) {
+    createApi()
     createWindow()
   }
 })
