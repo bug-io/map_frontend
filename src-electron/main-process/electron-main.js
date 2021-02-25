@@ -18,28 +18,23 @@ if (process.env.PROD) {
 let mainWindow
 
 function createApi () {
-  let {PythonShell} = require('python-shell')
+  // Com terminal visivel
+  // let {shell} = require('electron')
+  // shell.openPath('D:\\Testes\\map_frontend\\map_frontend\\src-electron\\main-process\\run.bat')
 
-  let {shell} = require('electron')
-  
-  shell.openPath('C:/Users/jotap/OneDrive/Área de Trabalho/Bug.io/Testes/electron_py_api/run.bat')
+  // Sem terminal visivel
+  var spawn = require('child_process').spawn
+  spawn('cmd.exe', ['/c', 'D:\\Testes\\electron_py_api\\run.bat'])
 
-  // let pyshell = new PythonShell(
-  //   'C:/Users/jotap/OneDrive/Área de Trabalho/Bug.io/Testes/electron_py_api/hello.py',{env: }
-  // );
-
-  // pyshell.on('message', function(message) {
-  //   console.log(message);
-  //   console.log(typeof message);
-  // });
+  // console.log( `stderr: ${ls.stderr.toString()}` );
+  // console.log( `stdout: ${ls.stdout.toString()}` );
+  // console.log( `status: ${ls.status}` );
 }
 
 function createWindow () {
   /**
    * Initial window options
    */
-  // api();
-  
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 600,
