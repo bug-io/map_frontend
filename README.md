@@ -30,3 +30,8 @@ See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
 quasar dev -m electron -- --no-sandbox --disable-setuid-sandbox
 ```
 https://quasar.dev/quasar-cli/developing-electron-apps/build-commands
+
+### Build 
+pre build
+* api: pyinstaller --onefile hello.py  
+* app: quasar build --mode electron 

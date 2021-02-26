@@ -24,7 +24,7 @@ function createApi () {
 
   // Sem terminal visivel
   var spawn = require('child_process').spawn
-  spawn('cmd.exe', ['/c', 'D:\\Testes\\electron_py_api\\run.bat'])
+  spawn('cmd.exe', ['/c', 'D:\\Testes\\electron_py_api\\dist\\hello.exe'])
 
   // console.log( `stderr: ${ls.stderr.toString()}` );
   // console.log( `stdout: ${ls.stdout.toString()}` );
